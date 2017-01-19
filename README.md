@@ -42,6 +42,6 @@ That's all for this version.   If you have questions you can post them here.   B
 
 Thanks for checking out eBayCommander
 
-   -Figmo
-   -The Author
+    Figmo
+    "The Author"
 
