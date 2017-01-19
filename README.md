@@ -23,7 +23,7 @@ Once you have your Token Key from eBay, install the plugin by copying the projec
 
 Some notes on how this plugin handles various bits of information from eBay:
 
-* Each time eBayCommander checks for new orders - it looks back 24 hours from now.  This is done to for performance.   So you'll want to make sure you don't change the interval of the scheduled task to anything over a day.   And if you disable this plugin and come back a few days later and enable it again - be aware that it can only see new orders that were placed on eBay in the past day.
+* Each time eBayCommander checks for new orders - it looks back 24 hours from now.  This is done to for performance.  Going back too many days just slows down the check for new orders process.   So you'll want to make sure you don't change the interval of the scheduled task to anything over a day.   And if you disable this plugin and come back a few days later and enable it again - be aware that it can only see new orders that were placed on eBay in the past day.
 
 * Customer email's will be looked up, and if a match is found in nopCommerce that customer will be used for the order.  Otherwise, a new "Guest" customer will automatically be created.
 
