@@ -1,4 +1,4 @@
-# eBayCommander v1.0
+# eBayCommander v1.0 Jan 2017
 Import orders from eBay into nopCommerce 3.70
 
 This nopCommerce plugin automatically imports orders from your eBay store to your nopCommerce store.   Currently it works with version 3.70.  May work on other versions.   How can you tell?  Install it and try it.  (then let me know and I'll update this file)
@@ -35,4 +35,13 @@ Some notes on how this plugin handles various bits of information from eBay:
 
 * Each order added will publish the OrderPaidEvent() in nopCommerce so that any other plugins you may have installed that trigger on this event will recognize the new Orders.
 
+* A NOTE ON SKU's:  Long ago, before SKU's were widely available for use in eBay and nopCommerce - I implemented my own encoding to embed a SKU into the eBay product name field.   I would just enclose it in curly braces like so "New In Box - Dual Headed Hydrosilator {XYZ123}"   I had some custom software we wrote that would parse out the text between the curly braces and use that to lookup the SKU in nopCommerce.   Because I still have quite a few legacy listings on eBay that use that old method of embedding SKU's in the product name, when I developed eBayCommander I included support for this.   Be aware that this support is build into eBayCommander.  You can use it if you want.   If I ever remove it from the plugin in the future - the release notes will alert you.   But really, I'm in no hurry to remove it.   It's not hurting anything to just leave it there.   And who knows, maybe somebody else will find it useful?
+
+
+That's all for this version.   If you have questions you can post them here.   But I would encourage you to look at the source code first.   It's not that complicated and I tried to comment the shit out of it so it should be pretty easy to follow.
+
+Thanks for checking out eBayCommander
+
+   -Figmo
+   -The Author
 
