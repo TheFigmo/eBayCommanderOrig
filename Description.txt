@@ -1,0 +1,8 @@
+﻿Group: Misc
+FriendlyName: Import orders from eBay to nopCommander
+SystemName: RG.Plugin.eBayCommander
+Version: 1.00
+SupportedVersions: 3.70
+Author: Figmo (http://www.RoadlessGear.com)
+DisplayOrder: 1
+FileName: RG.Plugin.eBayCommander.dll
