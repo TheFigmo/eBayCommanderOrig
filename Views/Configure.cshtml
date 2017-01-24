@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "";
+}
+@model RG.Plugin.eBayCommander.Models.ConfigurationModel
+@using Nop.Web.Framework;
+@Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table id="ConfigTable" class="adminContent">
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.eBayToken):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.eBayToken)
+                @Html.ValidationMessageFor(model => model.eBayToken)
+                <input type="button" value="@T("Plugins.eBayCommander.eBayRequestKey")" onclick  ="window.open('https://developer.ebay.com/signin');">
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.eBayDefaultStoreId):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.eBayDefaultStoreId)
+                @Html.ValidationMessageFor(model => model.eBayDefaultStoreId)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.eBayDefaultProductId):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.eBayDefaultProductId)
+                @Html.ValidationMessageFor(model => model.eBayDefaultProductId)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="save" class="k-button" value="@T("Admin.Common.Save")"/>
+            </td>
+        </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" class="k-button" value="@T("Plugins.eBayCommander.eBayCheckForNewOrders")" onclick="displayLoading(ConfigTable); @("location.href='"+ Url.Action("CheckForNewOrders","eBayCommander")+ "'")">
+            </td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+            function displayLoading(target) {
+                var element = $(target);
+                kendo.ui.progress(element, true);
+                setTimeout(function(){
+                    kendo.ui.progress(element, false);
+                }, 60000);
+            }
+    </script>
+}
